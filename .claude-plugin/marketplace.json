@@ -1,0 +1,28 @@
+{
+  "name": "runvia",
+  "owner": {
+    "name": "Runvia"
+  },
+  "metadata": {
+    "description": "Runvia skills: live web, social and company data, and video, image and voice models",
+    "version": "0.2.0"
+  },
+  "plugins": [
+    {
+      "name": "runvia",
+      "description": "The Runvia skills for running paid tools through one key and one wallet",
+      "source": "./",
+      "strict": false,
+      "version": "0.2.0",
+      "homepage": "https://runvia.xyz",
+      "license": "Apache-2.0",
+      "skills": [
+        "./skills/runvia",
+        "./skills/runvia-clone-viral",
+        "./skills/runvia-leads-br",
+        "./skills/runvia-pesquisa-social",
+        "./skills/runvia-video-ugc"
+      ]
+    }
+  ]
+}
