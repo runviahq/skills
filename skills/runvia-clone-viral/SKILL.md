@@ -24,11 +24,11 @@ If the user gave a link, use it. Otherwise:
 
 1. `scrapecreators.tiktok.search.keyword` (`query` = product or niche, `region`,
    `date_posted` this week or month, `sort_by` most liked) and
-   `scrapecreators.instagram.reels.search`. About 2 credits.
+   `scrapecreators.instagram.reels.search`. About 12 credits.
 2. Rank by views over the author's follower count, so a small account's breakout beats a big
    account's average post. Show the top 5 with links and let the user pick.
 
-## 2. Take it apart (about 2 credits)
+## 2. Take it apart (about 12 credits)
 
 1. Transcript: `scrapecreators.tiktok.video.transcript` or
    `scrapecreators.instagram.media.transcript` (`url`).
@@ -45,8 +45,8 @@ render price, and wait for approval.
 
 ## 4. Render
 
-- One clip per beat or one continuous clip, on `bytedance.video.seedance-2-5` (about 115 cr/s at
-  480p, 259 cr/s at 720p) or `alibaba.video.wan-3-0` (about 35 cr/s at 480P). Match the source's
+- One clip per beat or one continuous clip, on `bytedance.video.seedance-2-5` (about 650 cr/s at
+  480p, 1,450 cr/s at 720p) or `alibaba.video.wan-3-0` (about 220 cr/s at 480P). Match the source's
   aspect ratio (usually `9:16`).
 - Narration on `elevenlabs.voice.tts`, one call per script.
 - Render the hook beat first at 480p and show it; render the rest after approval, each with

@@ -31,27 +31,27 @@ Two sources; use either or both.
   `mainActivity.id.in`), city (`address.municipality.in`, IBGE code) or state
   (`address.state.in`), size (`company.size.id.in`), Simples (`company.simples.optant.eq`),
   status (`status.id.in`, 2 = active), founding date and whether a phone or email exists
-  (`phones.ex`, `emails.ex`). `limit` is required; it bills 7.965 credits per call plus 8.85 credits per 10 rows. Find the
+  (`phones.ex`, `emails.ex`). `limit` is required; it bills 45 credits per call plus 50 credits per 10 rows. Find the
   CNAE code first (search Google for "CNAE <segment>" with `serper.google.search`) and confirm it
   with the user.
-- **By the map.** `serper.google.places` (`q` "<segment> em <cidade>", 1.1 credits per page) or
-  `serper.google.maps` (3.3 credits) returns name, address, phone, rating, review count and
+- **By the map.** `serper.google.places` (`q` "<segment> em <cidade>", about 6 credits per page) or
+  `serper.google.maps` (about 19 credits) returns name, address, phone, rating, review count and
   website. Always put the city inside `q`. It has no CNPJ; match it in step 3.
 
 ## 3. Enrich
 
 | Field | Tool | Price |
 |---|---|---|
-| Full company record by CNPJ | `cnpja.office.lookup` (`taxId`) | 8.85 cr |
-| Record with extras (partners, registrations) | `cnpja.office.details` (`taxId`) | 53.1 cr |
-| Simples Nacional and MEI | `cnpja.simples.lookup` (`taxId`) | 8.85 cr |
-| State registration | `cnpja.ccc.lookup` (`taxId`, `states`) | 8.85 cr |
-| Partners by name | `cnpja.person.search` (`name.in`, `limit`) | 7.965 cr per call plus 8.85 cr per 10 rows |
-| Website text and public contacts | `firecrawl.scrape` (`url`) | 3 cr |
-| Company's CNPJ from its name | `serper.google.search` (`q`) "<nome> CNPJ <cidade>" | 1.1 cr |
+| Full company record by CNPJ | `cnpja.office.lookup` (`taxId`) | 50 cr |
+| Record with extras (partners, registrations) | `cnpja.office.details` (`taxId`) | 300 cr |
+| Simples Nacional and MEI | `cnpja.simples.lookup` (`taxId`) | 50 cr |
+| State registration | `cnpja.ccc.lookup` (`taxId`, `states`) | 50 cr |
+| Partners by name | `cnpja.person.search` (`name.in`, `limit`) | 45 cr per call plus 50 cr per 10 rows |
+| Website text and public contacts | `firecrawl.scrape` (`url`) | about 17 cr |
+| Company's CNPJ from its name | `serper.google.search` (`q`) "<nome> CNPJ <cidade>" | about 6 cr |
 
 Filter on what you already have before you enrich: drop inactive companies, wrong sizes and
-places with no website when the user needs one. Run the 53.1-credit details call only on the
+places with no website when the user needs one. Run the 300-credit details call only on the
 final list.
 
 ## 4. Buying signals (optional)

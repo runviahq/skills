@@ -14,7 +14,7 @@ metadata:
 # UGC video with Runvia
 
 Read the `runvia` skill first. Video is the most expensive thing Runvia sells: a 5-second 720p
-Seedance clip costs about 1,300 credits (US$1.30). Never generate without the user's go-ahead
+Seedance clip costs about 7,300 credits. Never generate without the user's go-ahead
 on the script and the price.
 
 ## 1. Brief
@@ -23,7 +23,7 @@ Ask in one message: the product (name, what it does, price, a photo if they have
 audience, the language and country, the vertical format (9:16 by default), how many hooks to
 test (3 by default), and the budget. Ask for a product photo when the product must look exact.
 
-## 2. Research the hooks (about 13 credits)
+## 2. Research the hooks (about 75 credits)
 
 1. `scrapecreators.tiktok.search.keyword` with the niche keyword and `region`, and
    `scrapecreators.instagram.reels.search` with the same idea. One page each.
@@ -52,7 +52,7 @@ generation price and wait for approval.
 Steps:
 
 1. Upload any product photo with `runvia files upload` and pass the URL in the clip input.
-2. Generate one hook clip at 480p first (about 580 credits for 5 s on Seedance). Show it.
+2. Generate one hook clip at 480p first (about 3,200 credits for 5 s on Seedance). Show it.
 3. After approval, generate the rest with one `--idempotency-key` per clip
    (`ugc-<product>-<hook>-<n>`) so a retry never pays twice.
 4. Narrate each script; check the audio length matches the clip.

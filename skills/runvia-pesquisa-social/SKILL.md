@@ -26,7 +26,7 @@ reais. Then show the plan with the price of each step and the total, and wait fo
 
 ## Tools that do the work
 
-ScrapeCreators rows cost 1.094 credits per call; most TikHub rows cost 1.1 to 8.8 credits per call, a few up to 55 credits.
+ScrapeCreators rows cost about 6 credits per call; most TikHub rows cost about 6 to 50 credits per call, a few up to 310 credits.
 Run `runvia discover "<platform> <job>"` when you need something not listed here.
 
 | Job | Tool |

@@ -21,8 +21,9 @@ Runvia sells about 520 endpoints from Serper, Exa, Firecrawl, TikHub, ScrapeCrea
 CNPJá, ByteDance (Seedance), Alibaba (Wan) and ElevenLabs behind one key. You discover a tool,
 inspect its price and inputs, run it, and the wallet is charged only when the call succeeds.
 
-Prices are in credits: 1,000 credits = US$1. Always tell the user what a step costs before a
-paid run, and the total at the end.
+Prices are in credits: R$10 = 10,000 credits. Prices in credits are updated every day at
+midnight, Brasília time, because suppliers charge in dollars. Always tell the user what a step
+costs before a paid run, and the total at the end.
 
 ## First: check where you stand
 
@@ -46,7 +47,7 @@ The CLI prints tables on a terminal and JSON when piped or with `--json`. Read J
 ```sh
 runvia discover "tiktok videos by keyword" --limit 5
 runvia inspect scrapecreators.tiktok.search.keyword
-runvia run scrapecreators.tiktok.search.keyword --query "airfryer receitas" --region BR -w --max-cost 5
+runvia run scrapecreators.tiktok.search.keyword --query "airfryer receitas" --region BR -w --max-cost 10
 ```
 
 1. **Discover** by the job, in plain words, English or Portuguese. Results list tool id, price,
@@ -60,7 +61,7 @@ runvia run scrapecreators.tiktok.search.keyword --query "airfryer receitas" --re
    charged if the hold would be higher.
 
 Over HTTP: `POST https://api.runvia.xyz/v1/run` with `Authorization: Bearer $RUNVIA_API_KEY`
-and `{"tool": "...", "input": {...}, "maxCost": 5, "idempotencyKey": "...", "wait": 60}`.
+and `{"tool": "...", "input": {...}, "maxCost": 10, "idempotencyKey": "...", "wait": 60}`.
 `GET /v1/runs/:id` reads a run; `POST /v1/discover` and `POST /v1/inspect` mirror the CLI.
 
 Over MCP: `runvia setup` adds the server `https://mcp.runvia.xyz/mcp` to your agent, with the key
@@ -71,15 +72,15 @@ read from `RUNVIA_API_KEY`. Its tools are `discover`, `inspect`, `run`, `get_run
 
 - **Billing types.** `per_call` charges each successful call. `per_success` and `per_result`
   charge nothing when the result list is empty. `per_result` charges per row returned (the
-  price shows the unit, for example `8.85/10` = 8.85 credits per 10 rows). `per_second` (video)
+  price shows the unit, for example `50/10` = 50 credits per 10 rows). `per_second` (video)
   charges by the requested duration and resolution, `per_character` (voice) by the text length,
   `per_image` by images made, `free` costs nothing.
 - **What is never charged:** upstream errors, timeouts, auth and rate-limit failures, and empty
   results on `per_success` and `per_result` tools.
 - **Estimate before a batch.** Multiply the unit price by the number of calls or rows, tell
-  the user the total, and ask before anything above about 500 credits (US$0.50) or anything
+  the user the total, and ask before anything above about 3,000 credits or anything
   generative (video, images, voice) unless the user already set a budget.
-- **Prefer cheap discovery steps.** Search and list calls cost about 1 to 3 credits; pull the
+- **Prefer cheap discovery steps.** Search and list calls cost about 6 to 17 credits; pull the
   expensive detail, transcript or generation only for the rows that survive the filter.
 
 ## Long runs
@@ -121,16 +122,16 @@ wait (`runvia runs wait <runId>`) until they approve.
 ## When to dispute
 
 If a completed, charged run returned something useless (wrong person, empty fields presented as
-data, a broken video), dispute it: `runvia dispute <runId> "<what was wrong>"`. Runs up to 500
+data, a broken video), dispute it: `runvia dispute <runId> "<what was wrong>"`. Runs up to 3,000
 credits finished in the last 7 days are refunded at once, up to 3 automatic refunds a week.
 Dispute only real failures, never a result the user simply did not like.
 
 ## Reading the web
 
-- One known URL: `firecrawl.scrape` (3 credits) returns clean markdown.
-- A whole section of a site: `firecrawl.map` to list URLs (3 credits), then scrape only the ones
-  you need; `firecrawl.crawl` bills 3 credits per page.
-- Search and read: `serper.google.search` (1.1 credits, Google results), `exa.search` (semantic
+- One known URL: `firecrawl.scrape` (about 17 credits) returns clean markdown.
+- A whole section of a site: `firecrawl.map` to list URLs (about 17 credits), then scrape only the ones
+  you need; `firecrawl.crawl` bills about 17 credits per page.
+- Search and read: `serper.google.search` (about 6 credits, Google results), `exa.search` (semantic
   search), `exa.answer` (an answer with citations), `serper.google.news` for news.
 - Social platforms block plain fetches; use the platform tools (`discover "<platform> profile"`).
 
@@ -138,10 +139,10 @@ Dispute only real failures, never a result the user simply did not like.
 
 | Job | Tool | Price |
 |---|---|---|
-| Video, best quality | `bytedance.video.seedance-2-5` | about 115 cr/s at 480p, 259 cr/s at 720p |
-| Video, cheaper | `alibaba.video.wan-3-0` | about 35 cr/s at 480P, 70 cr/s at 720P |
-| Image | `alibaba.image.wan-2-7`, `alibaba.image.wan-2-7-pro` | 25.92 cr, 65.28 cr per image |
-| Voice | `elevenlabs.voice.tts`, `elevenlabs.voice.tts-flash` | 0.088 cr, 0.044 cr per character |
+| Video, best quality | `bytedance.video.seedance-2-5` | about 650 cr/s at 480p, 1,450 cr/s at 720p |
+| Video, cheaper | `alibaba.video.wan-3-0` | about 220 cr/s at 480P, 440 cr/s at 720P |
+| Image | `alibaba.image.wan-2-7`, `alibaba.image.wan-2-7-pro` | about 150 cr, 370 cr per image |
+| Voice | `elevenlabs.voice.tts`, `elevenlabs.voice.tts-flash` | about 0.5 cr, 0.25 cr per character |
 
 Show the price of each generation and wait for the user's go-ahead. Generate one clip or image
 first; batch only after the user approves the first result.
