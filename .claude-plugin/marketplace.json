@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Runvia skills: live web, social and company data, and video, image and voice models",
-    "version": "0.3.0"
+    "version": "0.3.1"
   },
   "plugins": [
     {
@@ -13,7 +13,7 @@
       "description": "The Runvia skills for running paid tools through one key and one wallet",
       "source": "./",
       "strict": false,
-      "version": "0.3.0",
+      "version": "0.3.1",
       "homepage": "https://runvia.xyz",
       "license": "Apache-2.0",
       "skills": [

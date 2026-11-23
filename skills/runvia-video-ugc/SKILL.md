@@ -8,7 +8,7 @@ description: >-
   "vídeo com Seedance", "narração com ElevenLabs", "UGC para meu produto".
 license: Apache-2.0
 metadata:
-  cli-version: 0.3.0
+  cli-version: 0.3.1
 ---
 
 # UGC video with Runvia

@@ -12,7 +12,7 @@ description: >-
   narração", "raspe esta página".
 license: Apache-2.0
 metadata:
-  cli-version: 0.3.0
+  cli-version: 0.3.1
 ---
 
 # Runvia: paid tools for your agent

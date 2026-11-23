@@ -59,7 +59,7 @@ it runs.
 Each skill is a folder in `skills/` holding a `SKILL.md`: YAML frontmatter (`name`,
 `description`, `license`, `metadata.cli-version`) followed by the instructions.
 `metadata.cli-version` is the `@runvia/cli` version the skill was checked against; this
-release matches `@runvia/cli` 0.3.0.
+release matches `@runvia/cli` 0.3.1.
 
 ## Contributing
 
