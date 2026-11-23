@@ -24,11 +24,11 @@ If the user gave a link, use it. Otherwise:
 
 1. `scrapecreators.tiktok.search.keyword` (`query` = product or niche, `region`,
    `date_posted` this week or month, `sort_by` most liked) and
-   `scrapecreators.instagram.reels.search`. About 12 credits.
+   `scrapecreators.instagram.reels.search`. About 14 credits.
 2. Rank by views over the author's follower count, so a small account's breakout beats a big
    account's average post. Show the top 5 with links and let the user pick.
 
-## 2. Take it apart (about 12 credits)
+## 2. Take it apart (about 14 credits)
 
 1. Transcript: `scrapecreators.tiktok.video.transcript` or
    `scrapecreators.instagram.media.transcript` (`url`).

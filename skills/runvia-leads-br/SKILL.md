@@ -34,7 +34,7 @@ Two sources; use either or both.
   (`phones.ex`, `emails.ex`). `limit` is required; it bills 45 credits per call plus 50 credits per 10 rows. Find the
   CNAE code first (search Google for "CNAE <segment>" with `serper.google.search`) and confirm it
   with the user.
-- **By the map.** `serper.google.places` (`q` "<segment> em <cidade>", about 6 credits per page) or
+- **By the map.** `serper.google.places` (`q` "<segment> em <cidade>", about 7 credits per page) or
   `serper.google.maps` (about 19 credits) returns name, address, phone, rating, review count and
   website. Always put the city inside `q`. It has no CNPJ; match it in step 3.
 
@@ -48,7 +48,7 @@ Two sources; use either or both.
 | State registration | `cnpja.ccc.lookup` (`taxId`, `states`) | 50 cr |
 | Partners by name | `cnpja.person.search` (`name.in`, `limit`) | 45 cr per call plus 50 cr per 10 rows |
 | Website text and public contacts | `firecrawl.scrape` (`url`) | about 17 cr |
-| Company's CNPJ from its name | `serper.google.search` (`q`) "<nome> CNPJ <cidade>" | about 6 cr |
+| Company's CNPJ from its name | `serper.google.search` (`q`) "<nome> CNPJ <cidade>" | about 7 cr |
 
 Filter on what you already have before you enrich: drop inactive companies, wrong sizes and
 places with no website when the user needs one. Run the 300-credit details call only on the

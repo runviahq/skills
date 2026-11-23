@@ -80,7 +80,7 @@ read from `RUNVIA_API_KEY`. Its tools are `discover`, `inspect`, `run`, `get_run
 - **Estimate before a batch.** Multiply the unit price by the number of calls or rows, tell
   the user the total, and ask before anything above about 3,000 credits or anything
   generative (video, images, voice) unless the user already set a budget.
-- **Prefer cheap discovery steps.** Search and list calls cost about 6 to 17 credits; pull the
+- **Prefer cheap discovery steps.** Search and list calls cost about 7 to 17 credits; pull the
   expensive detail, transcript or generation only for the rows that survive the filter.
 
 ## Long runs
@@ -131,7 +131,7 @@ Dispute only real failures, never a result the user simply did not like.
 - One known URL: `firecrawl.scrape` (about 17 credits) returns clean markdown.
 - A whole section of a site: `firecrawl.map` to list URLs (about 17 credits), then scrape only the ones
   you need; `firecrawl.crawl` bills about 17 credits per page.
-- Search and read: `serper.google.search` (about 6 credits, Google results), `exa.search` (semantic
+- Search and read: `serper.google.search` (about 7 credits, Google results), `exa.search` (semantic
   search), `exa.answer` (an answer with citations), `serper.google.news` for news.
 - Social platforms block plain fetches; use the platform tools (`discover "<platform> profile"`).
 
@@ -142,7 +142,7 @@ Dispute only real failures, never a result the user simply did not like.
 | Video, best quality | `bytedance.video.seedance-2-5` | about 650 cr/s at 480p, 1,450 cr/s at 720p |
 | Video, cheaper | `alibaba.video.wan-3-0` | about 220 cr/s at 480P, 440 cr/s at 720P |
 | Image | `alibaba.image.wan-2-7`, `alibaba.image.wan-2-7-pro` | about 150 cr, 370 cr per image |
-| Voice | `elevenlabs.voice.tts`, `elevenlabs.voice.tts-flash` | about 0.5 cr, 0.25 cr per character |
+| Voice | `elevenlabs.voice.tts`, `elevenlabs.voice.tts-flash` | about 500 cr, 250 cr per 1,000 characters |
 
 Show the price of each generation and wait for the user's go-ahead. Generate one clip or image
 first; batch only after the user approves the first result.

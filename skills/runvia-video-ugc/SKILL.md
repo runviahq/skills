@@ -23,7 +23,7 @@ Ask in one message: the product (name, what it does, price, a photo if they have
 audience, the language and country, the vertical format (9:16 by default), how many hooks to
 test (3 by default), and the budget. Ask for a product photo when the product must look exact.
 
-## 2. Research the hooks (about 75 credits)
+## 2. Research the hooks (about 85 credits)
 
 1. `scrapecreators.tiktok.search.keyword` with the niche keyword and `region`, and
    `scrapecreators.instagram.reels.search` with the same idea. One page each.
