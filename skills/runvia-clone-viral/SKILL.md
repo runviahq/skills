@@ -9,7 +9,7 @@ description: >-
   "vídeo igual a este", "modelar o viral".
 license: Apache-2.0
 metadata:
-  cli-version: 0.2.0
+  cli-version: 0.3.0
 ---
 
 # Clone a viral video's structure with Runvia

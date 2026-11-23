@@ -9,7 +9,7 @@ description: >-
   em <cidade>", "consulte o CNPJ", "sócios da empresa", "enriquecer CNPJ", "leads B2B".
 license: Apache-2.0
 metadata:
-  cli-version: 0.2.0
+  cli-version: 0.3.0
 ---
 
 # Brazilian leads with Runvia

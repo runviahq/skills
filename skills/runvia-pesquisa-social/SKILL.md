@@ -9,7 +9,7 @@ description: >-
   "concorrentes no Instagram", "influenciadores do nicho", "social listening".
 license: Apache-2.0
 metadata:
-  cli-version: 0.2.0
+  cli-version: 0.3.0
 ---
 
 # Social research with Runvia
