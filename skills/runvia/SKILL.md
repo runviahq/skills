@@ -12,7 +12,7 @@ description: >-
   narração", "raspe esta página".
 license: Apache-2.0
 metadata:
-  cli-version: 0.3.1
+  cli-version: 0.3.2
 ---
 
 # Runvia: paid tools for your agent
@@ -64,9 +64,11 @@ Over HTTP: `POST https://api.runvia.xyz/v1/run` with `Authorization: Bearer $RUN
 and `{"tool": "...", "input": {...}, "maxCost": 10, "idempotencyKey": "...", "wait": 60}`.
 `GET /v1/runs/:id` reads a run; `POST /v1/discover` and `POST /v1/inspect` mirror the CLI.
 
-Over MCP: `runvia setup` adds the server `https://mcp.runvia.xyz/mcp` to your agent, with the key
-read from `RUNVIA_API_KEY`. Its tools are `discover`, `inspect`, `run`, `get_run` (waits up to
-50 s per call), `stop_run`, `get_wallet` and `upload_file`, with the same money rules.
+Over MCP: `runvia setup` adds the server `https://mcp.runvia.xyz/mcp` to your agent, with no key
+in the file. The person signs in once from the agent, in the browser, and approves the
+connection; `runvia setup` prints how for each agent. Its tools are `discover`, `inspect`, `run`,
+`get_run` (waits up to 50 s per call), `stop_run`, `get_wallet` and `upload_file`, with the same
+money rules.
 
 ## Money
 
@@ -111,6 +113,7 @@ with `runvia runs <runId>`.
 | 12 `MAX_COST_EXCEEDED` | Hold above your `--max-cost` | Read the price again; ask the user before raising it |
 | 13 `CAP_REACHED` | Key's daily or monthly cap | Stop and tell the user; caps are set in the app or with `runvia keys` |
 | 14 `INVALID_INPUT` | Field missing or wrong | `runvia inspect <tool>` and fix the input |
+| 15 `NOT_FOUND` | No such tool or run. On a profile lookup: the provider found no account; not charged | Check the id or the handle; the same handle fails again |
 | 18 `RATE_LIMITED` | Too many calls | Wait, then retry with the same idempotency key |
 | 19/20 `TOOL_PAUSED` / `PROVIDER_PAUSED` | Runvia paused it | `discover` an alternative for the same job |
 | 22 `UPSTREAM_ERROR` | Provider failed; not charged | Retry once, then try another provider for the job |
